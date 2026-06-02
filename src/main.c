@@ -8,14 +8,9 @@ int main(int argc, char *argv[]) {
 
   char *command = NULL;
   size_t len = 0;
-  ssize_t read;
 
   printf("$ ");
-  read = getline(&command, &len, stdin);
-
-  for (int i = 0; i < len; i++) {
-    printf("char: %c\n", command[i]);
-  }
+  ssize_t read = getline(&command, &len, stdin);
 
   if (read != -1) {
     printf("%s: command not found", command);
