@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
   }
 
   if (read != -1) {
-    printf("%s: command not found", command);
+    // printf("%s: command not found", command);
   }
 
   free(command);
