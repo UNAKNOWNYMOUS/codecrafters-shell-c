@@ -13,8 +13,11 @@ int main(int argc, char *argv[]) {
   printf("$ ");
   read = getline(&command, &len, stdin);
 
+  if (command[len - 1] == '\n') {
+    printf("GOT A NEWLINE!");
+  }
+
   if (read != -1) {
-    command[len - 2] = '\0';
     printf("%s: command not found", command);
   }
 
