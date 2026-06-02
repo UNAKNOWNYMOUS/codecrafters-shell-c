@@ -13,8 +13,8 @@ int main(int argc, char *argv[]) {
   printf("$ ");
   read = getline(&command, &len, stdin);
 
-  if (command[len] == '\n') {
-    printf("GOT A NEWLINE!");
+  for (int i = 0; i < len; i++) {
+    printf("char: %c\n", command[i]);
   }
 
   if (read != -1) {
