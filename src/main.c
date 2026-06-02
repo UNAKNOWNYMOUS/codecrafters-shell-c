@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
   printf("$ ");
   read = getline(&command, &len, stdin);
 
-  if (command[len - 1] == '\n') {
+  if (command[len] == '\n') {
     printf("GOT A NEWLINE!");
   }
 
