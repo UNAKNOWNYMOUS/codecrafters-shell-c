@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #define _GNU_SOURCE
 #include <stddef.h>
 #include <stdio.h>
@@ -13,9 +14,10 @@ int main(int argc, char *argv[]) {
   printf("$ ");
 
   read = getline(&command, &len, stdin);
-  printf("%c", command[read - 1]);
   if (read != -1) {
+    command[read - 1] = '\0';
     printf("%s: command not found", command);
   }
+  free(command);
   return 0;
 }
