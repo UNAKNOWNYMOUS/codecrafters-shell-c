@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
   printf("$ ");
 
   read = getline(&command, &len, stdin);
-  printf("%c", command[15]);
+  printf("%c", command[25]);
   if (read != -1) {
     printf("%s: command not found", command);
   }
