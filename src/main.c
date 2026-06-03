@@ -13,11 +13,8 @@ int main(int argc, char *argv[]) {
   printf("$ ");
 
   read = getline(&command, &len, stdin);
-  if (read == -1) {
-    printf("Error reading from stdin\n");
-  } else {
-    printf("Line read is: %s\n", command);
+  if (read != -1) {
+    printf("%s: command not found", command);
   }
-
   return 0;
 }
