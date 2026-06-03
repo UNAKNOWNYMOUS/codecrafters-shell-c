@@ -1,7 +1,8 @@
-#include <stdlib.h>
 #define _GNU_SOURCE
+
 #include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
   // Flush after every printf
@@ -11,13 +12,16 @@ int main(int argc, char *argv[]) {
   size_t len = 0;
   ssize_t read;
 
-  printf("$ ");
+  while (1) {
+    printf("$ ");
 
-  read = getline(&command, &len, stdin);
-  if (read != -1) {
-    command[read - 1] = '\0';
-    printf("%s: command not found", command);
+    read = getline(&command, &len, stdin);
+    if (read != -1) {
+      command[read - 1] = '\0';
+      printf("%s: command not found", command);
+    }
+    free(command);
   }
-  free(command);
+
   return 0;
 }
