@@ -1,21 +1,23 @@
+#define _GNU_SOURCE
 #include <stddef.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
   // Flush after every printf
-  setbuf(stdout, NULL);
+  setvbuf(stdout, NULL, _IONBF, 0);
 
   char *command = NULL;
   size_t len = 0;
+  ssize_t read;
 
   printf("$ ");
-  ssize_t read = getline(&command, &len, stdin);
 
-  if (read != -1) {
-    printf("%s: command not found", command);
+  read = getline(&command, &len, stdin);
+  if (read == -1) {
+    printf("Error reading from stdin\n");
+  } else {
+    printf("Line read is: %s\n", command);
   }
 
-  free(command);
   return 0;
 }
