@@ -13,8 +13,9 @@ int main(int argc, char *argv[]) {
   printf("$ ");
 
   read = getline(&command, &len, stdin);
+  printf("%c", command[len - 1]);
   if (read != -1) {
-    printf("\n%s: command not found", command);
+    printf("%s: command not found", command);
   }
   return 0;
 }
