@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
       command[read - 1] = '\0';
     }
 
-    if (strcmp(command, "exit")) {
+    if (!strcmp(command, "exit")) {
       ;
     } else {
       printf("%s: command not found\n", command);
