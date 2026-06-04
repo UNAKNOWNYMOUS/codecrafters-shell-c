@@ -22,11 +22,11 @@ int main(int argc, char *argv[]) {
     }
 
     if (!strcmp(command, "exit")) {
-      ;
+      free(command);
+      return 0;
     } else {
       printf("%s: command not found\n", command);
     }
-    free(command);
   }
 
   return 0;
