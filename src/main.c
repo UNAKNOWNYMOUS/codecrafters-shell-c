@@ -1,8 +1,8 @@
-#define _GNU_SOURCE
-
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#define TRUE 1
 
 int main(int argc, char *argv[]) {
   // Flush after every printf
@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
   size_t len = 0;
   ssize_t read;
 
-  while (1) {
+  while (TRUE) {
     printf("$ ");
 
     read = getline(&command, &len, stdin);
