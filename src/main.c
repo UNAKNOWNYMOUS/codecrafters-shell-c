@@ -21,13 +21,12 @@ int main(int argc, char *argv[]) {
       command[read - 1] = '\0';
     }
 
-    if (!strcmp(command, "exit")) {
-      free(command);
-      return 0;
+    if (strcmp(command, "exit")) {
+      break;
     } else {
       printf("%s: command not found\n", command);
     }
+    free(command);
   }
-
   return 0;
 }
