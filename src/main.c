@@ -1,6 +1,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define TRUE 1
 
@@ -18,6 +19,11 @@ int main(int argc, char *argv[]) {
     read = getline(&command, &len, stdin);
     if (read != -1) {
       command[read - 1] = '\0';
+    }
+
+    if (strcmp(command, "exit")) {
+      ;
+    } else {
       printf("%s: command not found\n", command);
     }
     free(command);
